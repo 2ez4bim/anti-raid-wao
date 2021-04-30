@@ -13,8 +13,7 @@ client.commands= new Discord.Collection();
 client.login(process.env.TOKEN);
   
 client.on('ready', () => {
-    client.user.setActivity('Anit Raid System', { type: 'PLAYING' });
-    client.user.setActivity('Anit Raid Boss', { type: 'PLAYING' });
+    client.user.setActivity('Anti Raid WAO', { type: 'PLAYING' });
     console.clear();
  
   console.log(`$[INFO]: Logged on ${client.user.tag}`);  
