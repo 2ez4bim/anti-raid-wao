@@ -2,26 +2,27 @@ console.log("\nLoading...")
 console.log("If This Take Too long make sure u have add right token!")
 const fs = require('fs')
 const yaml = require("js-yaml");
-const { mainprefix , token } = yaml.load(fs.readFileSync("./config.yml"));
+const { mainprefix } = yaml.load(fs.readFileSync("./config.yml"));
 const Discord = require('discord.js')
 const client = new Discord.Client();
 const db = require('quick.db')
 const { join } = require('path');
 const { readdirSync } = require('fs');
+require('dotenv').config()
 client.commands= new Discord.Collection();
-client.login(token)
-
+client.login(process.env.TOKEN);
   
 client.on('ready', () => {
     client.user.setActivity('Anit Raid System', { type: 'PLAYING' });
+    client.user.setActivity('Anit Raid Boss', { type: 'PLAYING' });
     console.clear();
  
-  console.log('\n\x1b[32m%s\x1b[0m', `          $[INFO]: Logged on ${client.user.tag}`);  
-  console.log('\x1b[32m%s\x1b[0m', `           $[INFO]: PREFIX ${mainprefix}`);  
-  console.log('\x1b[32m%s\x1b[0m', `           $[EXTRA]: CUSTOM MADE ANIT-RAID`);  
+  console.log(`$[INFO]: Logged on ${client.user.tag}`);  
+  console.log(`$[INFO]: PREFIX ${mainprefix}`);  
+  console.log(`$[EXTRA]: CUSTOM MADE ANIT-RAID`);  
 
-   console.log('\x1b[31m%s\x1b[0m', `            $[CREDITS]: Made By DarkBoy/DarkMisehl YT`);  
-  console.log('\x1b[31m%s\x1b[0m', `            $[SUPPORT]: Dark Codes: https://discord.gg/6gzkUNq `);  
+   console.log(`$[CREDITS]: Made By DarkBoy/DarkMisehl YT`);  
+  console.log(`$[SUPPORT]: Dark Codes: https://discord.gg/6gzkUNq `);  
 
  });
 
